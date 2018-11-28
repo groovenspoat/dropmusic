@@ -21,6 +21,11 @@ public:
     QString SEARCH_BAND();
     QString SEARCH_ALBUM();
     QString SEARCH_MUSICIAN(QString);
+    QString UPDATE_PASSWORD(QString, QString);
+    QString INSERT_EVENT();
+    QString INSERT_CRITIC();
+    QString INSERT_MUSICIAN_BAND();
+    QString INSERT_ARTIST_EVENT();
 };
 
 
