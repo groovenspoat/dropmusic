@@ -68,4 +68,38 @@ QString PreparedStatements::SEARCH_MUSICIAN(QString line_search)
     return(SEARCH_MUSICIAN_Query);
 }
 
+QString PreparedStatements::UPDATE_PASSWORD(QString new_pass, QString username)
+{
+    QString UPDATE_PASSWORD_Query = "UPDATE user SET identification = ('%"+new_pass+"%') WHERE username = ('%"+username+"%'));";
+    return(UPDATE_PASSWORD_Query);
+}
 
+QString PreparedStatements::INSERT_EVENT()
+{
+    QString INSERT_EVENT_Query = "INSERT INTO event (label, location, information, envent_date) VALUES (:label, :location, :information, :envent_date);";
+    return(INSERT_EVENT_Query);
+}
+
+QString PreparedStatements::INSERT_CRITIC()
+{
+    QString INSERT_CRITIC_Query = "INSERT INTO critic (rating, opinion, album_id, user_username) VALUES (:rating, :opinion, :albumid, :user_username);";
+    return(INSERT_CRITIC_Query);
+}
+
+QString PreparedStatements::INSERT_ALBUM()
+{
+    QString INSERT_ALBUM_Query = "insert into album (id, label, genre, release_date, coverurl, publisher) VALUES (:id, :label, :gente, :release_date, :coverurl, :publisher);";
+    return(INSERT_ALBUM_Query);
+}
+
+QString PreparedStatements::INSERT_MUSICIAN_BAND()
+{
+    QString INSERT_MUSICIAN_BAND_Query = "INSERT INTO musician_band (musician_artist_id, band_artist_id) VALUES (:musician_artist_id, :band_artist_id);";
+    return(INSERT_MUSICIAN_BAND_Query);
+}
+
+QString PreparedStatements::INSERT_ARTIST_EVENT()
+{
+    QString INSERT_ARTIST_EVENT_Query = "INSERT INTO artist_event (artist_id, event_id) VALUES(:artist_id, :event_id);";
+    return(INSERT_ARTIST_EVENT_Query);
+}
